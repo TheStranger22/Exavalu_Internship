@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="Login" class="com.exavalu.models.User" method="doLogin">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">login.jsp</result>
+        </action>
+        <action name="SaveEmployee" class="com.exavalu.models.Employee" method="doAddEmployee">
+            <result name="SUCCESS">employeeDetails.jsp</result>
+            <result name="FAILURE">addemployee.jsp</result>
+        </action>
+        <action name="SignUp" class="com.exavalu.models.User" method="doSignUp">
+            <result name="SUCCESS">login.jsp</result>
+            <result name="FAILURE">signup.jsp</result>
+        </action>
+        <action name="LogOut" class="com.exavalu.models.User" method="doLogOut">
+            <result name="SUCCESS">login.jsp</result>
+            <result name="FAILURE">employeeDetails.jsp</result>
+        </action>
+        <action name="Search" class="com.exavalu.models.Employee" method="doSearch">
+            <result name="SUCCESS">searched.jsp</result>
+            <result name="FAILURE">search.jsp</result>
+        </action>
+    </package>
+</struts>
